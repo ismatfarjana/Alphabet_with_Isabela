@@ -53,6 +53,7 @@ h2, h1, h3, body {
 .line {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
