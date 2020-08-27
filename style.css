@@ -12,6 +12,7 @@ body {
   display: flex;
   flex-flow: column;
   text-align: center;
+  padding-left: 5rem;
 }
 h2, h1, h3, body {
   font-family: 'Londrina Solid', cursive;
@@ -24,9 +25,11 @@ h2, h1, h3, body {
   position: relative;
   top: 10vh;
   display: flex;
+  flex-direction: column;
   flex: 1;
   justify-content: center;
   margin-bottom: 10px;
+
 }
 
 .key {
@@ -35,16 +38,19 @@ h2, h1, h3, body {
   border: .1rem solid rgb(39, 31, 31);
   border-radius: .5rem;
   margin: 1rem;
-  font-size: 1rem;
+  font-size: 2rem;
   padding: 1rem .5rem;
   transition: all .05s ease;
-  width: 10rem;
+  width: 5rem;
   text-align: center;
   color: white;
   background: rgba(218, 83, 83, 0.459);
   text-shadow: 0 0 .5rem black;
 }
-
+.line {
+  display: flex;
+  flex-direction: row;
+}
 
 .playing {
   transform: scale(1.1);
@@ -52,8 +58,8 @@ h2, h1, h3, body {
   box-shadow: 0 0 1rem #ffc600;
 }
 .sound {
-  font-size: 0.4rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: .1rem;
-  color: #ffc600;
+  color: #e62f17;
 }
