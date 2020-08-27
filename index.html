@@ -14,125 +14,125 @@
   <div class="keys"> 
     <div class="line">
   
-    <div data-key="65" class="key">
+    <div data-key="65" class="key" onclick="playSoundOnClick(this)">
       <kbd>A</kbd>
       <span class="sound">APPLE</span>
     </div>
-    <div data-key="66" class="key">
+    <div data-key="66" class="key" onclick="playSoundOnClick(this)">
       <kbd>B</kbd>
       <span class="sound">BALL</span>
     </div>
-    <div data-key="67" class="key">
+    <div data-key="67" class="key" onclick="playSoundOnClick(this)">
       <kbd>C</kbd>
       <span class="sound">CAT</span>
     </div>
-    <div data-key="68" class="key">
+    <div data-key="68" class="key" onclick="playSoundOnClick(this)">
         <kbd>D</kbd>
         <span class="sound">DOLL</span>
       </div>
     </div> 
 
     <div class="line">
-  <div data-key="69" class="key">
+  <div data-key="69" class="key" onclick="playSoundOnClick(this)">
     <kbd>E</kbd>
     <span class="sound">EGG</span>
   </div>
-  <div data-key="70" class="key">
+  <div data-key="70" class="key" onclick="playSoundOnClick(this)">
     <kbd>F</kbd>
     <span class="sound">FAN</span>
   </div>
-  <div data-key="71" class="key">
+  <div data-key="71" class="key" onclick="playSoundOnClick(this)">
     <kbd>G</kbd>
     <span class="sound">GOAT</span>
   </div>
-  <div data-key="72" class="key">
+  <div data-key="72" class="key" onclick="playSoundOnClick(this)">
     <kbd>H</kbd>
     <span class="sound">HORSE</span>
   </div>
     </div>
 
     <div class="line">
-  <div data-key="73" class="key">
+  <div data-key="73" class="key" onclick="playSoundOnClick(this)">
     <kbd>I</kbd>
     <span class="sound">ICECREAM</span>
   </div>
-  <div data-key="74" class="key">
+  <div data-key="74" class="key" onclick="playSoundOnClick(this)">
     <kbd>J</kbd>
     <span class="sound">JUG</span>
   </div>
-  <div data-key="75" class="key">
+  <div data-key="75" class="key" onclick="playSoundOnClick(this)">
     <kbd>K</kbd>
     <span class="sound">KEY</span>
   </div>
-  <div data-key="76" class="key">
+  <div data-key="76" class="key" onclick="playSoundOnClick(this)">
     <kbd>L</kbd>
     <span class="sound">LION</span>
   </div>
     </div>
 
     <div class="line">
-  <div data-key="77" class="key">
+  <div data-key="77" class="key" onclick="playSoundOnClick(this)">
     <kbd>M</kbd>
     <span class="sound">MONKEY</span>
   </div>
-  <div data-key="78" class="key">
+  <div data-key="78" class="key" onclick="playSoundOnClick(this)">
     <kbd>N</kbd>
     <span class="sound">NOSE</span>
   </div>
-  <div data-key="79" class="key">
+  <div data-key="79" class="key" onclick="playSoundOnClick(this)">
     <kbd>O</kbd>
     <span class="sound">OWL</span>
   </div>
-  <div data-key="80" class="key">
+  <div data-key="80" class="key" onclick="playSoundOnClick(this)">
     <kbd>P</kbd>
     <span class="sound">PARROT</span>
   </div>
     </div>
 
     <div class="line">
-  <div data-key="81" class="key">
+  <div data-key="81" class="key" onclick="playSoundOnClick(this)">
     <kbd>Q</kbd>
     <span class="sound">QUEEN</span>
   </div>
-  <div data-key="82" class="key">
+  <div data-key="82" class="key" onclick="playSoundOnClick(this)">
     <kbd>R</kbd>
     <span class="sound">ROSE</span>
   </div>
-  <div data-key="83" class="key">
+  <div data-key="83" class="key" onclick="playSoundOnClick(this)">
     <kbd>S</kbd>
     <span class="sound">SNAKE</span>
   </div>
-  <div data-key="84" class="key">
+  <div data-key="84" class="key" onclick="playSoundOnClick(this)">
     <kbd>T</kbd>
     <span class="sound">TEA</span>
   </div>
     </div>
 
     <div class="line">
-  <div data-key="85" class="key">
+  <div data-key="85" class="key" onclick="playSoundOnClick(this)">
     <kbd>U</kbd>
     <span class="sound">UMBRELLA</span>
   </div>
-  <div data-key="86" class="key">
+  <div data-key="86" class="key" onclick="playSoundOnClick(this)">
     <kbd>V</kbd>
     <span class="sound">VIOLIN</span>
   </div>
-  <div data-key="87" class="key">
+  <div data-key="87" class="key" onclick="playSoundOnClick(this)">
     <kbd>W</kbd>
     <span class="sound">WINDOW</span>
   </div>
-  <div data-key="88" class="key">
+  <div data-key="88" class="key" onclick="playSoundOnClick(this)">
     <kbd>X</kbd>
     <span class="sound">XYLOPHONE</span>
   </div>
     </div>
 
     <div class="line"> 
-  <div data-key="89" class="key">
+  <div data-key="89" class="key" onclick="playSoundOnClick(this)">
     <kbd>Y</kbd>
     <span class="sound">YELLOW</span>
   </div>
-  <div data-key="90" class="key">
+  <div data-key="90" class="key" onclick="playSoundOnClick(this)">
     <kbd>Z</kbd>
     <span class="sound">ZIP</span>
   </div>
@@ -181,8 +181,20 @@
    
 
     function playSound(e) {
+      console.log(e.keyCode);
       const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
       const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+      if(!audio) return; //stops function
+      audio.currentTime = 0; //rewinds
+      audio.play();
+      key.classList.add('playing');
+    }
+
+    function playSoundOnClick(elm) {
+      const letter = elm.firstElementChild.innerText;
+      const asciiCode = letter.charCodeAt(0);
+      const audio = document.querySelector(`audio[data-key="${asciiCode}"]`);
+      const key = document.querySelector(`.key[data-key="${asciiCode}"]`);
       if(!audio) return; //stops function
       audio.currentTime = 0; //rewinds
       audio.play();

@@ -1,21 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100&display=swap');
 html {
-  background: #858383;
-background: linear-gradient(181deg,#858383 0%, #d5cbeb 20%);
-background: -webkit-linear-gradient(181deg,#858383 0%, #d5cbeb 20%);
-background: -moz-linear-gradient(181deg,#858383 0%, #d5cbeb 20%);
-  background-size: 100%;
+  background: url("img.png") bottom center;
+  background-size: cover;
   font-size: 20px;
   
 }
 body {
+  
   display: flex;
   flex-flow: column;
   text-align: center;
-  padding-left: 5rem;
+  justify-content: center;
+  
 }
 h2, h1, h3, body {
   font-family: 'Londrina Solid', cursive;
+  color: whitesmoke;
+  font-weight: 300;
 }
 .social {
   position: relative;
@@ -29,6 +30,8 @@ h2, h1, h3, body {
   flex: 1;
   justify-content: center;
   margin-bottom: 10px;
+  padding: 0 20px;
+  justify-content: center;
 
 }
 
@@ -44,12 +47,13 @@ h2, h1, h3, body {
   width: 5rem;
   text-align: center;
   color: white;
-  background: rgba(218, 83, 83, 0.459);
+  background: rgba(139, 170, 67, 0.719);
   text-shadow: 0 0 .5rem black;
 }
 .line {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .playing {
